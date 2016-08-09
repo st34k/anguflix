@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.css"/>
+<link href='https://fonts.googleapis.com/css?family=Audiowide|Lobster|Bangers' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+  <title>
+    AnguFlix!
+  </title>
+</head>
+<body ng-app = "movieApp" ng-controller = "movieCtrl">
+
+<div class="myCollection">
+  <div class = "budget">
+    <h2 id= "budget" ng-model="budget">Your budget: {{budget.amount | currency}}</h2>
+  </div>
+  <div class="anguflix">
+    <h1><i class="fa fa-video-camera" aria-hidden="true"></i> A n g u FLIX</h1>
+  </div>
+
+  <div class="mycoll">
+    <h1>My collection</h1>
+  </div>
+
+  <div class = "formhere">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="collection" placeholder="Search by Title">
+      </div>
+
+      <div class="form-group">
+
+        <select class="form-control input-select" id="exampleSelect1" ng-model = "query" placeholder="year">
+          <option value="" disabled selected>Search by Year</option>
+          <option>{{undefined}}</option>
+          <option ng-repeat = "year in years">{{year}}</option>
+        </select>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+  <div class = "container-fluid">
+    <div class = "row roww">
+      
+      <h3 ng-show="show">Select movies from below to add to your collection</h3>
+      <div class = "movie-contain">
+        <div class = "col-md-4 movie" ng-model = "movie" ng-repeat = "movie in myCollection | filter: {title: collection, year: query} track by $index">
+          <div class = "remove" ng-click="remove($index)"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <div class = "movieImg">
+              <img ng-src="{{movie.img}}"/>
+            </div>
+            <div class = "movieInfo">
+              <h2 title="{{movie.title}}">{{movie.title}}</h2>
+              <h4>{{movie.year}}</h4>
+              <p class="short-description">{{movie.descrShort}}</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+ 
+
+    <div class = "row roww">
+      <h2 class="movies-title">All Movies</h2>
+      <form class="form-inline">
+        <h3>Search by Title: <input type="text" class="form-control input" ng-model="search"></h3>
+      </form>
+        <div class = "movie-contain">
+         <div class = "col-md-4  movie" ng-model="movie" ng-click = "addToCollection($index)" ng-repeat = "movie in allMovies | filter: {title: search} track by $index" >
+            <div class = "movieImg">
+              <img ng-src="{{movie.img}}"/>
+            </div>
+            <div class = "movieInfo">
+              <h2>{{movie.title}}</h2>
+              <h4>{{movie.year}}</h4>
+             <p class="short-description">{{movie.descrShort}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="service.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+</body>
+</html>

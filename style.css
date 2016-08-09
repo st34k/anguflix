@@ -1,0 +1,121 @@
+body {
+  background-color: lightgray;
+}
+
+/
+
+
+.input{
+  width:40%;
+}
+
+.myCollection{
+  background-color:orange;
+  padding:3%;
+  box-sizing: border-box;
+  position:relative;
+  height:100px;
+}
+
+.budget{
+  position:absolute;
+  top:0;
+  right:10%;
+
+}
+
+.budget h2{
+  font-size:15px;
+}
+
+.anguflix {       /*div holding title anguflix*/
+  position:absolute;
+  top:20%;
+  left:2%;
+  width:20%;
+
+}
+
+.anguflix h1{
+  position:absolute;
+  
+  font-size: 50px;
+  font-family:'Bangers';
+}
+
+.mycoll{      /*div that holds the title my collection*/
+  left:56%;
+  top:30%;
+  position: absolute;
+}
+.mycoll h1 {
+  font-family:'Lobster';
+}
+
+.short-description{
+  height:85px;
+  overflow: auto;
+}
+
+.formhere{        /*div that holds the top form (text and year search) */
+  position:absolute;
+  left:70%;
+  top: 55%;
+}
+
+.input{
+  width:40%;
+}
+
+.hidden{
+  display:none;
+}
+
+.roww{
+  margin:0 auto;
+  padding:1%;
+}
+
+.movie-contain {
+
+}
+
+.movies-title{
+ font-family:'Lobster';
+ font-size:50px;
+  }
+
+.movie{
+background-color:white;
+box-sizing: border-box;
+border: 8px lightgray solid;
+padding: 1%;
+
+}
+
+
+.movieImg{
+  width:100%;
+  height:200px;
+
+}
+
+.movieImg img{
+  width:100%;
+  height:200px;
+}
+
+
+.remove {
+  position:absolute;
+  top:0;
+  right:0;
+  font-size:2em;
+ /* text-shadow: 2px 2px gray;*/
+  background-color:gray;
+  height:40px;
+  width:40px;
+  text-align:center;
+}
+
+
